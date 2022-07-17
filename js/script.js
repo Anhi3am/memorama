@@ -6,20 +6,20 @@ $(function(){
 	var score = 0;
 	var contador = 0;
 
-    function CargarAleatorio(){	 //carga de imágenes 1-16 posiciones
+    function CargarAleatorio(){	 //load images 1-16 positions
        
         for(i=1;i<17;i++){
             vectorImagen[i]= i+".png";
         }
 
-								//carga imágenes 17-32 posiciones
+								//load images 17-32 positions
         var k=1;
         for(i=17;i<33;i++){
             vectorImagen[i]= k+".png";
             k++;
         }
 
-								//intercambio de imágenes
+								//image sharing
         var aux=" ";
         for(i=1;i<32;i++){
             var aleatorio=Math.floor((Math.random()*32)+1); //redondear valor
@@ -32,23 +32,23 @@ $(function(){
         }
     } 
 
-    //llamamos a la función cargar aleatorio
+    //we call the function load random
     $("#cargar").on("click",function(){
         CargarAleatorio();
     })
 
-    //función ocultar
+    //hide function
     function ocultar(){
         for(i=1;i<33;i++){
             $("#"+i+"a").attr("src","img/0.png");
         }
     }
-    //llamamos a la función ocultar
+    //we call the hide function
     $("#ocultar").on("click",function(){
         ocultar();
     })
 
-    //función evento
+    //event function
     function evento(identificador){
         if (turno==0) {
             valor1=identificador;
@@ -75,7 +75,7 @@ $(function(){
         }
     }
 
-    //llamar a la función evento
+    //we call the event function
     $(".boton").on("click",function(){
         var identificador=$(this).data('id');
         evento(identificador);
